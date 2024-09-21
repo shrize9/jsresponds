@@ -3,12 +3,12 @@ import {writable, get} from "svelte/store";
 export class Respond{
     constructor(respond) {
         if(respond !== undefined) {
-            this.respondId = respond.respondId;
+            this.respondId =localStorage.getItem("respondId") || respond.respondId;
             this.name = respond.name;
             this.countQuestion = respond.countQuestion;
             this.created = respond.created;
             this.answers = respond.answers;
-            this.currentAskId =0;
+            this.currentAskId =localStorage.getItem("currentAskId") || undefined;
         }else{
             this.respondId =localStorage.getItem("respondId") || "";
             this.name="";
@@ -37,7 +37,7 @@ function createRespond() {
             set(respond);
         },
         load:(respond)=>{
-            set(respond);
+            set(new Respond(respond));
         },
         nextAsk:(ask)=>{
             console.log(ask);

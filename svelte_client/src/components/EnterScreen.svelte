@@ -4,6 +4,7 @@
     import {onMount} from "svelte";
     import {RespondRest} from "../rests/RespondRest.js";
     import {replace} from "svelte-spa-router";
+    import {RespondBroadcastClient} from "../rests/RespondBroadcastClient.js";
 
     let respondName = $respond.name
     let maxAsks =100;
@@ -23,6 +24,11 @@
             (new RespondRest()).load($respond.respondId).then((json) => {
                 if(json.error ==false) {
                     respond.load(json.data.respond);
+                    //open socket
+                    new RespondBroadcastClient($respond.respondId, (event)=>{
+                        console.log("get message broadcast")
+                        console.log(event)
+                    })
                     if (($respond.currentAskId !== undefined) && ($respond.currentAskId != "undefined")) {
                         replace("/ask/" + $respond.currentAskId);
                     } else
