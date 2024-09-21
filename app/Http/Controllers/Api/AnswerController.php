@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\Response;
 use App\Models\Asks;
 use App\Models\Answer;
+use App\Models\Respond;
 
 /**
  * Description of RespondController
@@ -36,6 +37,12 @@ class AnswerController extends \App\Http\Controllers\Controller{
                     "answer"=>$answerIndex
                 ]
             );
+            
+            $respond = Respond::find($respondId);                
+            $excludeAsks =Answer::askIdsForRespond($respondId);
+            if($respond->countQuestion <= sizeof($excludeAsks)){
+                dispatch(new \App\Jobs\RespondTopResultUpdate($respondId));                                    
+            }
             
             return Response::json($responseResult->setData(["answer"=>$answer->toArray()])->toArray());
         } catch (\Exception $err){  
