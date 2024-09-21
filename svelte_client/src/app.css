@@ -1,0 +1,34 @@
+body{
+    background-color: gray;
+}
+
+.panel{
+    width: 450pt;
+    margin: auto;
+    margin-top: 40pt;
+    padding: 10pt;
+}
+
+.panel-row{
+    margin-top: 5pt;
+}
+
+.ask-helper{
+    font-size: 8pt;
+}
+
+.answers-list{
+    list-style: none;
+}
+
+.wrong-answer{
+    background-color: firebrick;
+}
+.correct-answer{
+    background-color: lightgreen;
+}
+
+.explanation{
+    font-size: 8pt;
+    color: lightgreen;
+}
