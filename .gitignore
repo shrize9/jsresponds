@@ -21,4 +21,4 @@ yarn-error.log
 /.zed
 /svelte_client/.idea
 /svelte_client/node_modules
-/nbproject
+/nbproject/
