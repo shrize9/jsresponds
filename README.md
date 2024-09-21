@@ -18,6 +18,11 @@
 
 ### Front javascript svelte framework
 
+
+### broadcast_server on scala
+Расчет места в топе ответов выполнен в виде квазимедленного решения
+поэтому выносим его в очередь RespondTopResultUpdate.php добавляем broadcast_server простой web socket server на стороне клиента подключаемся к нему, когда RespondTopResultUpdate выполнится отправляется сообщение какое место среди всех ответов
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
