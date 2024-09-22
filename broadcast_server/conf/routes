@@ -6,10 +6,13 @@
 # the page you get when you go to http://localhost:9000/
 GET   /     controllers.WebSocketsController.index
 
-# the event for id
+# Отправка сообщения конкретному клиенту
 POST   /:service/:id     controllers.WebSocketsController.post(service:String, id:String)
 
-# the websocket that will be used by that index page
+# Отправка всем клиентам сообщение
+POST   /:service/     controllers.WebSocketsController.postSendAll(service:String)
+
+# Урл открытия websocket клиентом
 GET   /ws/:service/:id   controllers.WebSocketsController.ws(service:String, id:String)
 
 

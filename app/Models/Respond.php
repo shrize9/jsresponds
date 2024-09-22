@@ -39,8 +39,8 @@ class Respond extends Model
     {
         parent::boot();
 
-        static::creating(function($user) {
-            $user->created = time();
+        static::creating(function($respond) {
+            $respond->created = time();
         });
     }    
     /**

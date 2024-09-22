@@ -41,7 +41,8 @@ class AnswerController extends \App\Http\Controllers\Controller{
             $respond = Respond::find($respondId);                
             $excludeAsks =Answer::askIdsForRespond($respondId);
             if($respond->countQuestion <= sizeof($excludeAsks)){
-                dispatch(new \App\Jobs\RespondTopResultUpdate($respondId));                                    
+                dispatch(new \App\Jobs\RespondTopResultUpdate($respondId));    
+                \App\Classes\BroadcastClient::sendTextToAll($respond->name . " закончил тест.");
             }
             
             return Response::json($responseResult->setData(["answer"=>$answer->toArray()])->toArray());

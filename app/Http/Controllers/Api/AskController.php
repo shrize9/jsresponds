@@ -35,7 +35,7 @@ class AskController extends \App\Http\Controllers\Controller{
         if(!$respond)
             return Response::json($responseResult->setError("respond not found with " .$respondId)->toArray());
         
-        if($respond->countQuestion < sizeof($excludeAsks)){
+        if($respond->countQuestion <= sizeof($excludeAsks)){
             return Response::json($responseResult->setError("respond maximum answers count")->toArray());
         }
         return Response::json($responseResult->setData(\App\Models\Asks::getRandomAsk())->toArray());

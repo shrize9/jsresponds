@@ -1,10 +1,10 @@
 <script>
     import RangeSlider from "svelte-range-slider-pips";
     import {respond, Respond} from "../store/RespondStore.js"
-    import {onMount} from "svelte";
+    import {onDestroy, onMount} from "svelte";
     import {RespondRest} from "../rests/RespondRest.js";
     import {replace} from "svelte-spa-router";
-    import {RespondBroadcastClient} from "../rests/RespondBroadcastClient.js";
+    import {createRespondBroadcastClient} from "../rests/RespondBroadcastClient.js";
 
     let respondName = $respond.name
     let maxAsks =100;
@@ -25,10 +25,7 @@
                 if(json.error ==false) {
                     respond.load(json.data.respond);
                     //open socket
-                    new RespondBroadcastClient($respond.respondId, (event)=>{
-                        console.log("get message broadcast")
-                        console.log(event)
-                    })
+                    (createRespondBroadcastClient()).open($respond.respondId);
                     if (($respond.currentAskId !== undefined) && ($respond.currentAskId != "undefined")) {
                         replace("/ask/" + $respond.currentAskId);
                     } else
@@ -52,6 +49,7 @@
                 newRespond.name          =respondName;
                 newRespond.countQuestion =countQuestion;
                 respond.create(newRespond);
+                (createRespondBroadcastClient()).open(newRespond.respondId);
                 replace("/ask")
             }else{
 

@@ -26,10 +26,19 @@ extends AbstractController(cc)
     def post(service:String, id:String) =Action { implicit request: Request[AnyContent] =>
         logger.info(s"for ${service} with $id")
         logger.info(s"body of ${request.body.asJson}")
-        request.body.asJson.foreach { case jsValue=>
+        val result=request.body.asJson.map { case jsValue=>
             SimpleWebSocketActor.sendToWS(service, id, jsValue)
         }
-        Ok("result ok")
+        Ok(s"result $result")
+    }
+
+    def postSendAll(service:String) =Action { implicit request: Request[AnyContent] =>
+        logger.info(s"send all for ${service}")
+        logger.info(s"body of ${request.body.asJson}")
+        val result =request.body.asJson.map { case jsValue=>
+            SimpleWebSocketActor.sendToAllWS(service, jsValue)
+        }
+        Ok(s"result:$result")
     }
 
     // our WebSocket. DOCS on WebSocket.accept:
