@@ -7,6 +7,7 @@
     import ResultScreen from "./components/ResultScreen.svelte";
     import {createRespondBroadcastClient} from "./rests/RespondBroadcastClient.js";
     import {notifications} from "./store/notifications.js";
+    import Toast from "./components/Toast.svelte";
 
     const routes = {
         '/': EnterScreen,
@@ -24,9 +25,10 @@
 
     function callbackHandler(event){
         console.log("get message broadcast");
+        console.log(event);
         const body =JSON.parse(event.data);
-        if(body.type =="notify"){
-            notifications.success(body.message, 3000)
+        if(body.message.type =="notify"){
+            notifications.success(body.message.text, 3000)
         }
     }
 
@@ -34,6 +36,7 @@
 
 <main class="container">
     <Router {routes}/>
+    <Toast></Toast>
 </main>
 
 <style>

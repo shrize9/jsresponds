@@ -60,6 +60,7 @@ class RespondController extends \App\Http\Controllers\Controller{
     
     private function empty(Request $request){
         $responseResult =new \App\Classes\ResponseResult();
+        
         $responseResult->setData(
                 [
                     "randomAsk"=> Asks::getRandomAsk()["question"], 

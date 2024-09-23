@@ -10,16 +10,20 @@
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Http/Controllers/IndexController.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/Dockerfile</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Models/Asks.php</file>
+            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/.env.example</file>
+            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Jobs/RespondTopResultUpdate.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Classes/ResponseResult.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Http/Controllers/Api/AnswerController.php</file>
+            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Classes/BroadcastClient.php</file>
+            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/tests/Unit/ExampleTest.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/routes/api.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/config/cache.php</file>
+            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/config/queue.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Http/Controllers/Api/RespondController.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Http/Controllers/Api/AskController.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/routes/web.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/bootstrap/app.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Models/Answer.php</file>
-            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/storage/logs/laravel.log</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Models/Respond.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/docker-compose.yml</file>
         </group>
