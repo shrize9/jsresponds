@@ -5,10 +5,12 @@
         <group>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/resources/views/index.blade.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/docker_configs/nginx/conf.d/app.conf</file>
+            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Providers/AppServiceProvider.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/public/index.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/docker_configs/php/local.ini</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Http/Controllers/IndexController.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/Dockerfile</file>
+            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/bootstrap/cache/services.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Models/Asks.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/.env.example</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Jobs/RespondTopResultUpdate.php</file>
@@ -16,14 +18,10 @@
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Http/Controllers/Api/AnswerController.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Classes/BroadcastClient.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/tests/Unit/ExampleTest.php</file>
-            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/routes/api.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/config/cache.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/config/queue.php</file>
-            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Http/Controllers/Api/RespondController.php</file>
-            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Http/Controllers/Api/AskController.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/routes/web.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/bootstrap/app.php</file>
-            <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Models/Answer.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/app/Models/Respond.php</file>
             <file>file:/Users/p_kuzmin/NetBeansProjects/jsresponds/docker-compose.yml</file>
         </group>
