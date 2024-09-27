@@ -10,7 +10,14 @@
     let topPlace ="Ожидаем результат";
     let answersPie=null;
 
-    var data = [30, 86, 168, 281, 303, 365];
+    var data = [
+        {correct:1, askId:10, counted:20},
+        {correct:0, askId:11, counted:22},
+        {correct:0, askId:13, counted:40},
+        {correct:1, askId:15, counted:30},
+        {correct:1, askId:20, counted:40},
+        {correct:1, askId:40, counted:50}
+    ];
 
     onMount(()=>{
         createRespondBroadcastClient().addCallback(getTopPlaceRespond);
@@ -29,16 +36,23 @@
             .innerRadius(innerRadius)
             .outerRadius(outerRadius);
 
-        const pie = d3.pie().sort(null);
+        const pie = d3.pie().value((d)=>d.counted).sort(null);
 
-        const path = svg.datum(data).selectAll("path")
-            .data(pie)
-            .join("path")
-            .attr("fill", (d, i) => color(i))
+        let g = svg.append("g")
+            .attr("transform", "translate(150, 120)");
+
+        // Grouping different arcs
+        var arcs = g.selectAll("arc")
+            .data(pie(data))
+            .enter()
+            .append("g");
+
+        arcs.append("path")
+            .attr("fill", (d, i) => {if(data[i].correct ==1) return color(i); else return "#FF0000"; })
             .attr("d", arc)
             .each(function(d) { this._current = d; }); // store the initial angles
 
-        d3.select(answersPie).append(svg);
+        console.log(svg);
     })
     onDestroy(()=>{
         createRespondBroadcastClient().removeCallback(getTopPlaceRespond);
