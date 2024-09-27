@@ -30,11 +30,11 @@
         const color = d3.scaleOrdinal(d3.schemeObservable10);
 
         const svg = d3.select(answersPie)
-            .attr("viewBox", [-width/2, -height/2, width, height]);
+            .attr("viewBox", [-100, height/4, width, height]);
 
         const arc = d3.arc()
-            .innerRadius(innerRadius)
-            .outerRadius(outerRadius);
+            .innerRadius(0)
+            .outerRadius(Math.min(width, height) / 2 - 1);
 
         const pie = d3.pie().value((d)=>d.counted).sort(null);
 
@@ -44,15 +44,18 @@
         // Grouping different arcs
         var arcs = g.selectAll("arc")
             .data(pie(data))
+            .attr("stroke", "white")
             .enter()
             .append("g");
 
         arcs.append("path")
             .attr("fill", (d, i) => {if(data[i].correct ==1) return color(i); else return "#FF0000"; })
             .attr("d", arc)
-            .each(function(d) { this._current = d; }); // store the initial angles
-
-        console.log(svg);
+            .each(function(d) { this._current = d; });
+        arcs.append("text")
+            .attr("fill", d => "white")
+            .attr("transform", d => `translate(${arc.centroid(d)})`)
+            .text(d => `${d.data.counted}`);
     })
     onDestroy(()=>{
         createRespondBroadcastClient().removeCallback(getTopPlaceRespond);
