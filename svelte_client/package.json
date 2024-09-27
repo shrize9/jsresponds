@@ -14,6 +14,7 @@
     "vite": "^5.4.1"
   },
   "dependencies": {
+    "d3": "^7.9.0",
     "svelte-environment-variables": "^1.0.4",
     "svelte-range-slider-pips": "^3.1.1",
     "svelte-spa-router": "^4.0.1"
